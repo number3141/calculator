@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Burger Button</title>
+</head>
+<body>
+    <div class="wrap">
+      <div type="text" class="wrap-header">
+        <form action="" name="form">
+          <input type="text" name="textview" readonly>
+        </form>
+      </div>
+      <div class="number">
+        <div class="ac item" onclick="clearInp()">С</div>
+        <div class="del item" onclick="backInp()">&larr;</div>
+        <div class="plus item" onclick="inset(`+`)">+</div>
+        <div class="one item" onclick="inset(`1`)">1</div>
+        <div class="two item" onclick="inset(`2`)">2</div>
+        <div class="thre item" onclick="inset(`3`)">3</div>
+        <div class="minus item" onclick="inset(`-`)">-</div>
+        <div class="four item" onclick="inset(`4`)">4</div>
+        <div class="five item" onclick="inset(`5`)">5</div>
+        <div class="six item" onclick="inset(`6`)">6</div>
+        <div class="addition item" onclick="inset(`*`)">*</div>
+        <div class="seven item" onclick="inset(`7`)">7</div>
+        <div class="eight item" onclick="inset(`8`)">8</div>
+        <div class="nine item" onclick="inset(`9`)">9</div>
+        <div class="substraction item" onclick="inset(`/`)">/</div>
+        <div class="dot item" onclick="inset(`.`)">.</div>
+        <div class="zero item" onclick="inset(`0`)">0</div>
+        <div class="answer item" onclick="calc()">=</div>
+      </div>
+    </div> 
+  <script>
+    function inset(val){
+      document.form.textview.value = 
+      document.form.textview.value + val;
+   }
+    function clearInp(){
+      document.form.textview.value = '';
+    }
+    function backInp(){
+      let val =  document.form.textview.value;
+      document.form.textview.value =  val.substring(0, val.length - 1);
+    }
+    function calc(){
+      let val =  document.form.textview.value;
+      document.form.textview.value =  eval(val).toFixed(3);
+    }
+  </script>  
+</body>
+</html>
